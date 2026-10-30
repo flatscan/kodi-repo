@@ -1,0 +1,5 @@
+# Served byte-for-byte: the md5 must match addons.xml exactly
+addons.xml -text
+addons.xml.md5 -text
+*.zip binary
+*.png binary
