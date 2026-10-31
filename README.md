@@ -14,6 +14,13 @@ Kodi add-on repository for [Flatscan Widgets](https://github.com/flatscan/flatsc
 1. In the add-on's repository, bump `version` in `addon.xml` (Kodi only offers an update when it goes up), update `<news>`, and merge to `master`.
 2. Here, run `python build.py`. It packages each add-on with `git archive` from its `master` branch (committed files only, minus its `export-ignore` entries), then regenerates `addons.xml`, `addons.xml.md5` and `index.html`.
 3. Commit and push. Pages updates within a minute or two.
+4. Publish a GitHub release on the add-on's repository with the same zip, for example:
+
+   ```
+   gh release create v1.0.1 --repo flatscan/flatscanwidgets --target master --title "Flatscan Widgets 1.0.1" --notes-file notes.md zips/script.flatscan.widgets/script.flatscan.widgets-1.0.1.zip
+   ```
+
+   Always pass `--repo`: in the flatscanwidgets folder `gh` otherwise picks its `upstream` remote (Embuary Helper).
 
 To change the repository add-on itself, edit `repository.flatscan/addon.xml` and bump its version too.
 
